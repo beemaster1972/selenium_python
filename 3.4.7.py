@@ -4,6 +4,6 @@ from selenium.webdriver.common.by import By
 url = 'https://parsinger.ru/selenium/3/3.html'
 with webdriver.Firefox() as browser:
     browser.get(url)
-    tags = browser.find_elements(By.XPATH, '//p')
+    tags = browser.find_elements(By.XPATH, '//div[@class="text"]/p[2]')
     nums = [int(tag.text) for i, tag in enumerate(tags)]
     print(sum(nums))
